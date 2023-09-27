@@ -24,6 +24,10 @@
     font-family: "Poppins", sans-serif;
   }
 
+  .text-space {
+    line-height: 1;
+  }
+
   /* resets */
   h1 {
     font-size: 48.83px;
