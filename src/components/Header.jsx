@@ -3,10 +3,19 @@ import { navLinks } from "../constants";
 import Button from "./Button";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { myStyles } from "../styles";
 
 const Header = () => {
   const links = navLinks.map((link) => {
-    return <li key={link.id}>{link.title}</li>;
+    return (
+      <li
+        onClick={closeMenu}
+        key={link.id}
+        className={`cursor-pointer hover:border-b-2 hover:border-b-[#66A1E8] font-bold`}
+      >
+        {link.title}
+      </li>
+    );
   });
 
   const [toggle, setToggle] = useState(false);
@@ -15,19 +24,35 @@ const Header = () => {
     setToggle((prev) => !prev);
   }
 
+  function closeMenu() {
+    setToggle(false);
+  }
+
   return (
-    <header className="w-full p-6">
+    <header className="w-full py-4 px-4 md:px-28 sticky top-0 z-10 shadow-md">
       <nav className="flex justify-between items-center">
         {/* logo */}
         <Link className="font-bold text-2xl cursor-pointer">AO</Link>
         {/* links */}
-        <ul className="hidden md:flex gap-4 text-sm ">{links}</ul>
+        <ul className={`hidden md:flex gap-6 text-sm `}>{links}</ul>
+        {/* hamburger button */}
         <div
           onClick={handleToggle}
           className="font-bold text-xl sm:hidden cursor-pointer"
         >
           {!toggle ? <FaBars /> : <FaTimes />}
         </div>
+
+        {/* mobile menu */}
+        <ul
+          className={
+            toggle
+              ? "absolute top-[80px] w-full left-0 flex flex-col items-center gap-4"
+              : "hidden"
+          }
+        >
+          {links}
+        </ul>
       </nav>
     </header>
   );
