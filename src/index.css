@@ -1,3 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,500;1,700&family=Ubuntu:wght@300;400;500;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer {
+  /* utilities */
+  :root {
+    --bgColor: #28405c;
+    --fgColor: #66a1e8;
+  }
+
+  /* header */
+  header {
+    height: 80px;
+  }
+
+  /* main */
+  body {
+    min-height: calc(100vh - 80px);
+    background-color: var(--bgColor);
+    color: var(--fgColor);
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* resets */
+  h1 {
+    font-size: 48.83px;
+  }
+  h2 {
+    font-size: 31.25px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
