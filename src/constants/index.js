@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 const navLinks = [
   {
     id: "experience",

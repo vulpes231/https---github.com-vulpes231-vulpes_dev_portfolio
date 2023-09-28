@@ -1,5 +1,6 @@
 import React from "react";
 import { experiences } from "../constants";
+import { myStyles } from "../styles";
 
 const Experience = () => {
   const workExperiences = experiences.map((exp) => (
@@ -17,7 +18,7 @@ const Experience = () => {
     </article>
   ));
   return (
-    <section>
+    <section id="experience" className={`${myStyles.screenSize}`}>
       <div className="flex gap-10">
         <h2>Work Experiences</h2>
         <span className="w-[250px] h-[4px]"></span>

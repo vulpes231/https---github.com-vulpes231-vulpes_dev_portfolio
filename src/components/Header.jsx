@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { navLinks } from "../constants";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
+import { myStyles } from "../styles";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -21,16 +22,36 @@ const Header = () => {
         key={link.id}
         className={`cursor-pointer hover:border-b-2 hover:border-b-[#66A1E8] font-bold`}
       >
-        {link.title}
+        <Link
+          to={link.id}
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          className="font-bold text-2xl cursor-pointer"
+        >
+          {link.title}
+        </Link>
       </li>
     );
   });
 
   return (
-    <header className="w-full py-4 px-4 lg:px-28 sticky top-0 z-10 shadow-sm">
+    <header
+      className={`${myStyles.pryBgColor} w-full py-4 px-4 lg:px-28 sticky top-0 z-10 shadow-sm`}
+    >
       <nav className="flex justify-between items-center">
         {/* logo */}
-        <Link className="font-bold text-2xl cursor-pointer">AO</Link>
+        <Link
+          to="hero"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          className="font-bold text-2xl cursor-pointer"
+        >
+          AO
+        </Link>
         {/* links */}
         <ul className={`hidden md:flex gap-6 text-sm `}>{links}</ul>
         {/* hamburger button */}
@@ -45,7 +66,7 @@ const Header = () => {
         <ul
           className={
             toggle
-              ? "absolute top-[80px] w-full left-0 flex flex-col items-center gap-4"
+              ? `${myStyles.pryBgColor} absolute top-[80px] w-full left-0 flex flex-col items-center gap-4 pb-10`
               : "hidden"
           }
         >

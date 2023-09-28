@@ -3,7 +3,7 @@ import { myStyles } from "../styles";
 
 const Hero = () => {
   return (
-    <section className={`${myStyles.screenSize}`}>
+    <section id="hero" className={`${myStyles.screenSize}`}>
       <div className={` flex flex-col gap-6`}>
         <h1
           className={`${myStyles.bigFont} ${myStyles.altFgColor} text-space font-bold md:w-[80%] `}
