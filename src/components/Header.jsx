@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { navLinks } from "../constants";
-import Button from "./Button";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { myStyles } from "../styles";
 
 const Header = () => {
+  const [toggle, setToggle] = useState(false);
+
+  function handleToggle() {
+    setToggle((prev) => !prev);
+  }
+
+  function closeMenu() {
+    setToggle(false);
+  }
+
   const links = navLinks.map((link) => {
     return (
       <li
@@ -17,16 +25,6 @@ const Header = () => {
       </li>
     );
   });
-
-  const [toggle, setToggle] = useState(false);
-
-  function handleToggle() {
-    setToggle((prev) => !prev);
-  }
-
-  function closeMenu() {
-    setToggle(false);
-  }
 
   return (
     <header className="w-full py-4 px-4 lg:px-28 sticky top-0 z-10 shadow-md">
