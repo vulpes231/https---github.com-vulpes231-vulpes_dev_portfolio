@@ -13,12 +13,12 @@
 
   /* header */
   header {
-    height: 65px;
+    height: 70px;
   }
 
   /* main */
   body {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 70px);
     background-color: var(--bgColor);
     color: var(--fgColor);
     font-family: "Poppins", sans-serif;
