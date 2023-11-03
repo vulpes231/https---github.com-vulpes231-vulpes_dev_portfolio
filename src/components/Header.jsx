@@ -20,7 +20,7 @@ const Header = () => {
       <li
         onClick={closeMenu}
         key={link.id}
-        className={`cursor-pointer hover:border-b-2 hover:border-b-[#66A1E8] font-bold`}
+        className={`cursor-pointer hover:border-b-2 hover:border-b-[#66A1E8] font-extralight`}
       >
         <Link
           to={link.id}
@@ -28,7 +28,7 @@ const Header = () => {
           smooth={true}
           offset={50}
           duration={500}
-          className="font-bold text-2xl cursor-pointer"
+          className="text-xl cursor-pointer"
         >
           {link.title}
         </Link>
@@ -37,9 +37,7 @@ const Header = () => {
   });
 
   return (
-    <header
-      className={`${myStyles.pryBgColor} w-full py-4 px-4 lg:px-28 sticky top-0 z-10 shadow-sm`}
-    >
+    <header className=" bg-[#051026] bg-opacity-80 w-full sticky top-0 z-10 shadow-sm text-[#fff] p-6">
       <nav className="flex justify-between items-center">
         {/* logo */}
         <Link
@@ -48,7 +46,7 @@ const Header = () => {
           smooth={true}
           offset={50}
           duration={500}
-          className="font-bold text-2xl cursor-pointer"
+          className="text-xl cursor-pointer font-bold"
         >
           AO
         </Link>
@@ -66,7 +64,7 @@ const Header = () => {
         <ul
           className={
             toggle
-              ? `${myStyles.pryBgColor} absolute top-[80px] w-full left-0 flex flex-col items-center gap-4 pb-10`
+              ? `bg-[#051026] bg-opacity-80 absolute top-[75px] w-full min-h-screen left-0 flex flex-col items-center gap-4 justify-center`
               : "hidden"
           }
         >

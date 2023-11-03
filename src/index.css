@@ -4,41 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer {
-  /* utilities */
-  :root {
-    --bgColor: #28405c;
-    --fgColor: #66a1e8;
-  }
+:root {
+  --bgColor: #28405c;
+  --fgColor: #fff;
+}
 
-  /* header */
-  header {
-    height: 70px;
-  }
+/* main */
+body {
+  min-height: 100vh;
+  /* background-color: var(--bgColor); */
+  color: var(--fgColor);
+  font-family: "Poppins", sans-serif;
+}
 
-  /* main */
-  body {
-    min-height: calc(100vh - 70px);
-    background-color: var(--bgColor);
-    color: var(--fgColor);
-    font-family: "Poppins", sans-serif;
-  }
-
-  .text-space {
-    line-height: 1;
-  }
-
-  /* resets */
-  h1 {
-    font-size: 48.83px;
-  }
-  h2 {
-    font-size: 31.25px;
-  }
-  h3 {
-    font-size: 20px;
-  }
-  p {
-    font-size: 16px;
-  }
+.hero {
+  background-image: url("../src/assets/pbg.webp");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
 }

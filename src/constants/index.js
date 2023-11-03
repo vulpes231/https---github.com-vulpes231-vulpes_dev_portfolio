@@ -28,7 +28,7 @@ const experiences = [
     achievements: [
       "Collaborated with a cross-functional team to develop a custom ERC-20 governance token from scratch. Designed and implemented the backend infrastructure using Hardhat and Solidity, ensuring security and functionality",
       "Created a user-friendly frontend interface using JavaScript, HTML, and CSS for token holders to interact with the governance platform",
-      "Implemented smart contract functionalities for voting, proposals, and token management. Conducted rigorous testing, including unit tests and integration tests, to ensure the reliability of the token and its governance features",
+      "Implemented smart contract functionalities for voting, proposals, and token management",
       "Successfully completed the project on time, meeting all client requirements and expectations",
     ],
   },
