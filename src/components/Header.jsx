@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { navLinks } from "../constants";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
-import { myStyles } from "../styles";
+import { logo } from "../assets";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -18,7 +18,6 @@ const Header = () => {
   const links = navLinks.map((link) => {
     return (
       <li
-        onClick={closeMenu}
         key={link.id}
         className={`cursor-pointer hover:border-b-2 hover:border-b-[#66A1E8] font-extralight`}
       >
@@ -29,6 +28,7 @@ const Header = () => {
           offset={50}
           duration={500}
           className="text-xl cursor-pointer"
+          onClick={closeMenu}
         >
           {link.title}
         </Link>
@@ -37,18 +37,26 @@ const Header = () => {
   });
 
   return (
-    <header className=" bg-[#051026] bg-opacity-80 w-full sticky top-0 z-10 shadow-sm text-[#fff] p-6">
+    <header className=" bg-[#fff] bg-opacity-80  w-full sticky top-0 z-10 shadow-sm text-[#0D0D0D] p-6 h-[70px]">
       <nav className="flex justify-between items-center">
         {/* logo */}
         <Link
           to="hero"
           spy={true}
           smooth={true}
-          offset={50}
+          offset={0}
           duration={500}
-          className="text-xl cursor-pointer font-bold"
+          className="text-xl cursor-pointer font-bold flex gap-1"
         >
-          AO
+          <img
+            src={logo}
+            alt="my-logo-image"
+            loading="lazy"
+            className="w-[25px]"
+          />
+          <h1 className="">
+            Vulpes<span className="text-[#F24B59] text-xl">Code</span>
+          </h1>
         </Link>
         {/* links */}
         <ul className={`hidden md:flex gap-6 text-sm `}>{links}</ul>
@@ -64,7 +72,7 @@ const Header = () => {
         <ul
           className={
             toggle
-              ? `bg-[#051026] bg-opacity-80 absolute top-[75px] w-full min-h-screen left-0 flex flex-col items-center gap-4 justify-center`
+              ? `bg-[#fff] text-[#0D0D0D] bg-opacity-80 absolute top-[70px] w-full min-h-screen left-0 flex flex-col items-center gap-4 justify-center`
               : "hidden"
           }
         >

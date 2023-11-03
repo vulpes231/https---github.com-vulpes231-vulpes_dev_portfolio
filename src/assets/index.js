@@ -1,3 +1,4 @@
 import pbg from "./pbg.webp";
+import logo from "./mylogo.png";
 
-export { pbg };
+export { pbg, logo };
