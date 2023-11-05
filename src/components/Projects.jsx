@@ -20,7 +20,7 @@ const Projects = () => {
             {project.title}
           </p>
           <div className="flex gap-2 justify-center">
-            {project.tools.map((tool) => {
+            {project.tools.map((tool, index) => {
               const className = tool.includes("React.js")
                 ? "text-cyan-500"
                 : tool.includes("Node.js")
@@ -32,7 +32,7 @@ const Projects = () => {
                 : "";
               return (
                 <span
-                  key={tool}
+                  key={index}
                   className={`${className} bg-[#fff] p-2  rounded-md font-extralight text-xs`}
                 >
                   {tool}
@@ -51,13 +51,13 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-[#0d0d0d] p-6 text-[#fff]"
+      className="min-h-screen bg-gradient-to-b from-[#0d0d0d] to-[#fff] p-6 text-[#fff]"
     >
-      <h3 className="text-2xl text-[#fff] font-semibold mt-20 mb-10 uppercase inline-block border-b-4 border-b-[#F24B59]">
-        Recent Projects
-      </h3>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 w-full">
-        {myProjects}
+      <div className="lg:max-w-[1000px] mx-auto">
+        <h3 className="text-2xl md:text-3xl text-[#fff] font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59]">
+          Recent Projects
+        </h3>
+        <div className="grid gap-4 md:grid-cols-2 w-full">{myProjects}</div>
       </div>
     </section>
   );

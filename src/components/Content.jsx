@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import Experience from "./Experience";
 import Projects from "./Projects";
+import About from "./About";
 
 const Content = () => {
   // const expRef = useRef(null);
@@ -10,6 +11,7 @@ const Content = () => {
       <Hero />
       <Experience />
       <Projects />
+      <About />
     </div>
   );
 };

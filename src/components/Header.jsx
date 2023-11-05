@@ -25,7 +25,7 @@ const Header = () => {
           to={link.id}
           spy={true}
           smooth={true}
-          offset={50}
+          offset={10}
           duration={500}
           className="text-xl cursor-pointer"
           onClick={closeMenu}
@@ -44,7 +44,7 @@ const Header = () => {
           to="hero"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={10}
           duration={500}
           className="text-xl cursor-pointer font-bold flex gap-1"
         >
