@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { bank, track } from "../assets";
 
 const navLinks = [
   {
@@ -55,4 +55,21 @@ const experiences = [
   },
 ];
 
-export { navLinks, experiences };
+const projects = [
+  {
+    id: 1,
+    img: bank,
+    title:
+      "A Full stack banking web application that allows users to manage their assets.",
+    tools: ["React.js", "Node.js", "MongoDB", "Redux"],
+  },
+  {
+    id: 2,
+    img: track,
+    title:
+      "A Full stack package tracking web application which aim to demonstrate how package tracking works in web application.",
+    tools: ["React.js", "Node.js", "MongoDB"],
+  },
+];
+
+export { navLinks, experiences, projects };
