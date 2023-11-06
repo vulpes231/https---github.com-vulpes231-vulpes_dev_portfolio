@@ -2,13 +2,10 @@ import React from "react";
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="min-h-screen bg-gradient-to-b from-[#0d0d0d] to-[#fff] p-6"
-    >
+    <section id="about" className="min-h-screen bg-[#0d0d0d] p-6">
       <div className="lg:max-w-[1000px] mx-auto">
         <h3 className="text-2xl md:text-3xl text-[#fff] font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59]">
-          About Me
+          About
         </h3>
         <div>
           {/* bio */}
