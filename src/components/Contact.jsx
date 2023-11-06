@@ -23,10 +23,15 @@ const Contact = () => {
       id="contact"
       className="min-h-screen bg-[#0d0d0d]  p-6 text-[#fff]"
     >
-      <div className="lg:max-w-[1000px] mx-auto">
-        <h3 className="text-2xl md:text-3xl text-[#fff] font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59]">
-          Contact
-        </h3>
+      <h3 className="text-2xl md:text-3xl text-[#fff] font-semibold mt-20 mb-5 capitalize inline-block border-b-4 border-b-[#F24B59]">
+        Let's Connect
+      </h3>
+      <div className="lg:max-w-[1000px] mx-auto flex flex-col gap-2">
+        <p>
+          I'm always open to new opportunities and collaborations. If you'd like
+          to discuss a potential project or just chat about technology, feel
+          free to reach out to me.
+        </p>
 
         <form action="" className="flex flex-col gap-2 font-extralight">
           <div className="flex flex-col">

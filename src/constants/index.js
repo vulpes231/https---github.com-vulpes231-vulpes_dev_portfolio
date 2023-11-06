@@ -72,4 +72,33 @@ const projects = [
   },
 ];
 
-export { navLinks, experiences, projects };
+const aboutArticles = [
+  {
+    id: 1,
+    title: "What I Do",
+    content: `My primary focus is on web development and mobile app development.
+    I enjoy working with JavaScript, React, Nodejs, ReactNative,
+    MongoDB and I'm always eager to learn new technologies to stay at
+    the forefront of the ever-evolving tech landscape.`,
+  },
+  {
+    id: 2,
+    title: "What I Do",
+    content: `I'm a firm believer in the importance of clean and maintainable
+    code. I'm dedicated to writing software that not only solves
+    problems but is also easy to understand, maintain, and scale. I
+    thrive in collaborative environments and enjoy working in
+    cross-functional teams to achieve the best results.`,
+  },
+  {
+    id: 3,
+    title: "What Drives Me",
+    content: ` I'm fueled by a desire to continuously improve and learn. Whether
+    it's through personal projects, online courses, or industry
+    events, I'm always seeking new opportunities to expand my skill
+    set and stay up-to-date with the latest developments in
+    technology.`,
+  },
+];
+
+export { navLinks, experiences, projects, aboutArticles };
