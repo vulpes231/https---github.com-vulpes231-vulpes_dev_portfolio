@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { experiences } from "../constants";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   const [activeExperiences, setActiveExperiences] = useState({});
@@ -13,7 +14,16 @@ const Experience = () => {
 
   const workExperiences = experiences.map((exp) => (
     <article key={exp.id}>
-      <div className="flex flex-col gap-3 ">
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{
+          ease: "linear",
+          duration: 2,
+          x: { duration: 0.5 },
+        }}
+        className="flex flex-col gap-3 "
+      >
         <div
           onClick={() => toggleExperience(exp.id)}
           className="font-extralight bg-[#fff] text-[#0D0D0D] p-4 rounded-md"
@@ -38,7 +48,7 @@ const Experience = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </motion.div>
     </article>
   ));
   return (

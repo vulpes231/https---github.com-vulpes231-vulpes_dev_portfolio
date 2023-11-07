@@ -9,6 +9,7 @@ const Input = ({ type, placeholder, value, onChange, name }) => {
         value={value}
         onChange={onChange}
         name={name}
+        autoComplete="off"
         className="w-full py-2 px-1 outline-none border border-[#F24B59] text-black"
       />
     </div>
