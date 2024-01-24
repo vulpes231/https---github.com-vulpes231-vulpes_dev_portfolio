@@ -3,6 +3,7 @@ import { navLinks } from "../constants";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { logo } from "../assets";
+import { styles } from "../constants/styles";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -19,7 +20,7 @@ const Header = () => {
     return (
       <li
         key={link.id}
-        className={`cursor-pointer hover:border-b-2 hover:border-b-[#66A1E8] font-extralight`}
+        className={`cursor-pointer hover:border-b-2 hover:border-b-[#F24B59] font-extralight`}
       >
         <Link
           to={link.id}
@@ -37,8 +38,10 @@ const Header = () => {
   });
 
   return (
-    <header className=" bg-[#fff] bg-opacity-80  w-full sticky top-0 z-10 shadow-sm text-[#0D0D0D] p-6 h-[70px]">
-      <nav className="flex justify-between items-center">
+    <header
+      className={`${styles.padding.large} ${styles.colors.lightBg} w-full  sticky top-0`}
+    >
+      <nav className={`flex justify-between items-center`}>
         {/* logo */}
         <Link
           to="hero"
@@ -46,16 +49,16 @@ const Header = () => {
           smooth={true}
           offset={10}
           duration={500}
-          className="text-xl cursor-pointer font-bold flex gap-1"
+          className="text-xl cursor-pointer font-bold flex gap-2"
         >
           <img
             src={logo}
             alt="my-logo-image"
             loading="lazy"
-            className="w-[25px]"
+            className="w-[28px]"
           />
-          <h1 className="">
-            Vulpes<span className="text-[#F24B59] text-xl">Code</span>
+          <h1 className="text-xl md:text-2xl">
+            Vulpes<span className="text-[#F24B59]">Code</span>
           </h1>
         </Link>
         {/* links */}

@@ -1,13 +1,21 @@
 import React from "react";
 import { projects } from "../constants";
 import { motion } from "framer-motion";
+import { styles } from "../constants/styles";
 
 const Projects = () => {
   const myProjects = projects.map((project) => {
     return (
-      <article
+      <motion.article
         key={project.id}
         className="w-full flex flex-col justify-between gap-4 rounded-lg bg-[#fff] bg-opacity-80 p-4"
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          ease: "linear",
+          duration: 2,
+          x: { duration: 0.5 },
+        }}
       >
         <figure>
           <img src={project.img} alt="bank-project-image" className="w-full" />
@@ -36,34 +44,24 @@ const Projects = () => {
             );
           })}
         </div>
-        <div className="bg-[#333] p-2 rounded-md">
+        <div className="bg-[#333] p-2 rounded-md text-[#fff] text-xs">
           <p>Demo url:</p>
           <p>Repo url:</p>
         </div>
-      </article>
+      </motion.article>
     );
   });
   return (
     <section
       id="projects"
-      className="min-h-screen bg-[#0d0d0d] p-6 text-[#fff]"
+      className={`${styles.colors.darkBg} ${styles.padding.large} min-h-screen ${styles.fontFamily.primary} `}
     >
       <h3 className="text-2xl md:text-3xl text-[#fff] font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59] lg:ml-28">
         Projects
       </h3>
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{
-          ease: "linear",
-          duration: 2,
-          x: { duration: 0.5 },
-        }}
-        // transition={{ type: "tween", stiffness: 100 }}
-        className="lg:max-w-[1000px] mx-auto"
-      >
+      <div className="lg:max-w-[1000px] mx-auto">
         <div className="grid gap-4 md:grid-cols-2 w-full">{myProjects}</div>
-      </motion.div>
+      </div>
     </section>
   );
 };

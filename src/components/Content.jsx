@@ -9,7 +9,7 @@ import Footer from "./Footer";
 const Content = () => {
   // const expRef = useRef(null);
   return (
-    <div>
+    <div className="">
       <Hero />
       <Experience />
       <Projects />

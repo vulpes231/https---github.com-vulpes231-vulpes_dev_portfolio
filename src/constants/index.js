@@ -83,7 +83,7 @@ const aboutArticles = [
   },
   {
     id: 2,
-    title: "What I Do",
+    title: "What I Believe",
     content: `I'm a firm believer in the importance of clean and maintainable
     code. I'm dedicated to writing software that not only solves
     problems but is also easy to understand, maintain, and scale. I

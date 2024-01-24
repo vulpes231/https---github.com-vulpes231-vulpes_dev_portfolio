@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { experiences } from "../constants";
 import { motion } from "framer-motion";
+import { styles } from "../constants/styles";
 
 const Experience = () => {
   const [activeExperiences, setActiveExperiences] = useState({});
@@ -39,11 +40,11 @@ const Experience = () => {
           className={
             !activeExperiences[exp.id]
               ? "hidden"
-              : "list-disc flex flex-col gap-2 text-slate-300 font-[Montserrat] text-sm font-light"
+              : "list-disc flex flex-col gap-2 text-slate-600 font-[Montserrat] text-sm font-extralight"
           }
         >
           {exp.achievements.map((achievement, index) => (
-            <li className="ml-5" key={index}>
+            <li className="mx-5 ml-5 text-xs" key={index}>
               {achievement}
             </li>
           ))}
@@ -52,10 +53,13 @@ const Experience = () => {
     </article>
   ));
   return (
-    <section id="experience" className="min-h-screen bg-[#0d0d0d]  p-6">
+    <section
+      id="experience"
+      className={`${styles.colors.darkBg} ${styles.padding.large} min-h-screen bg-opacity-10 ${styles.fontFamily.primary}`}
+    >
       <div className="lg:max-w-[1000px] mx-auto">
         <div className="">
-          <h3 className="text-2xl md:text-3xl text-[#fff] font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59]">
+          <h3 className="text-2xl md:text-3xl text-[#333] font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59]">
             Experiences
           </h3>
         </div>
