@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Input from "./Input";
-import { contact } from "../assets";
+import { contact, up } from "../assets";
 import { motion } from "framer-motion";
 import { styles } from "../constants/styles";
 
@@ -38,7 +38,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="">
+        <div className="lg:flex lg:flex-row-reverse w-full gap-10">
           <form
             action=""
             className="flex flex-col gap-2 font-extralight w-full"
@@ -85,6 +85,9 @@ const Contact = () => {
               Send Message
             </button>
           </form>
+          <figure className="w-full flex items-center justify-center">
+            <img src={up} alt="" className="w-full rounded-full" />
+          </figure>
         </div>
       </div>
     </section>

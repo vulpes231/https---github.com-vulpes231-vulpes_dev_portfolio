@@ -1,5 +1,5 @@
 import React from "react";
-import { BsArrowBarUp, BsArrowLeftRight, BsSend } from "react-icons/bs";
+import { BsArrowLeftRight } from "react-icons/bs";
 import { styles } from "../constants/styles";
 
 const Hero = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
         <h3
           className={`text-2xl md:text-5xl leading-7 text-center ${styles.fontFamily.primary} whitespace-nowrap font-bold text-[#fff]`}
         >
-          I'm Adebayo <span className="text-[#0d0d0d]">Olayinka.</span>
+          I'm Adebayo <span className="text-[#F24B59]">Olayinka.</span>
         </h3>
         <p
           className={`${styles.colors.lightText} text-center  capitalize w-full md:w-[95%] md:mx-auto ${styles.fontFamily.primary} font-extralight md:text-xl `}

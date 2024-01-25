@@ -33,6 +33,10 @@ const Projects = () => {
               ? "text-green-500"
               : tool.includes("Redux")
               ? "text-purple-500"
+              : tool.includes("AI")
+              ? "text-pink-500"
+              : tool.includes("Tailwind")
+              ? "text-blue-300"
               : "";
             return (
               <span

@@ -1,4 +1,4 @@
-import { bank, track } from "../assets";
+import { bank, health, track, vp } from "../assets";
 
 const navLinks = [
   {
@@ -69,6 +69,20 @@ const projects = [
     title:
       "A Full stack package tracking web application which aim to demonstrate how package tracking works in web application.",
     tools: ["React.js", "Node.js", "MongoDB"],
+  },
+  {
+    id: 3,
+    img: health,
+    title:
+      "A Full stack health tracking application facilitating effortless patient-professional connectivity for streamlined healthcare monitoring.",
+    tools: ["React.js", "Node.js", "MongoDB"],
+  },
+  {
+    id: 4,
+    img: vp,
+    title:
+      "An innovative article summarizer application that condenses complex content into concise, digestible summaries, offering users a quick and efficient way to grasp key information.",
+    tools: ["React.js", "Tailwind", "AI"],
   },
 ];
 
