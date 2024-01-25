@@ -1,6 +1,7 @@
 import React from "react";
 import { BsArrowLeftRight } from "react-icons/bs";
 import { styles } from "../constants/styles";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   return (
@@ -25,12 +26,17 @@ const Hero = () => {
           variety of projects that have honed my skills and allowed me to grow
           as a developer.
         </p>
-        <button
-          className={`${styles.padding.mid} ${styles.colors.bgColor} flex items-center ${styles.gap.small} ${styles.colors.lightText} rounded-lg mt-5 justify-center font-bold ${styles.fontFamily.primary} text-lg md:text-xl capitalize md:w-[450px] md:mx-auto hover:border hover:border-[#F24B59] hover:bg-transparent`}
+        <Link
+          to="projects"
+          spy={true}
+          smooth={true}
+          offset={10}
+          duration={500}
+          className={`${styles.padding.mid} ${styles.colors.bgColor} flex items-center ${styles.gap.small} ${styles.colors.lightText} rounded-lg mt-5 justify-center font-bold ${styles.fontFamily.primary} text-lg md:text-xl capitalize md:w-[450px] md:mx-auto hover:border hover:border-[#F24B59] hover:bg-transparent cursor-pointer`}
         >
           View my projects
           <BsArrowLeftRight className="font-semibold" size={18} />
-        </button>
+        </Link>
       </div>
     </section>
   );

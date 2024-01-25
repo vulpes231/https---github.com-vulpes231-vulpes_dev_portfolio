@@ -64,7 +64,9 @@ const Projects = () => {
         Projects
       </h3>
       <div className="lg:max-w-[1000px] mx-auto">
-        <div className="grid gap-4 md:grid-cols-2 w-full">{myProjects}</div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 w-full">
+          {myProjects}
+        </div>
       </div>
     </section>
   );

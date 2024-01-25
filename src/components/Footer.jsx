@@ -10,13 +10,13 @@ const Footer = () => {
       <div className="flex flex-col items-center">
         <p>Social media</p>
         <div className="flex gap-2">
-          <Link to="">
+          <Link to="https://github.com/vulpes231">
             <FaGithub />
           </Link>
-          <Link to="">
+          <Link to="https://twitter.com/4ULP35">
             <FaTwitter />
           </Link>
-          <Link to="">
+          <Link to="https://www.linkedin.com/in/olayinka26/">
             <FaLinkedin />
           </Link>
         </div>
