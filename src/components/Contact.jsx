@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "./Input";
-import { contact, up } from "../assets";
-import { motion } from "framer-motion";
+import { up } from "../assets";
+
 import { styles } from "../constants/styles";
+import { useDispatch, useSelector } from "react-redux";
+import { sendMessage, reset } from "../features/sendMessageSlice";
+
+const initState = {
+  name: "",
+  email: "",
+  message: "",
+};
 
 const Contact = () => {
-  const initState = {
-    user: "",
-    email: "",
-    message: "",
-  };
-
+  const dispatch = useDispatch();
   const [form, setForm] = useState(initState);
+  const [formError, setFormError] = useState(false);
+
+  const { loading, sent, error } = useSelector((state) => state.sendmessage);
 
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -20,6 +26,42 @@ const Contact = () => {
       [name]: value,
     }));
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (form.email && form.name && form.message) {
+      dispatch(sendMessage(form));
+    } else {
+      setFormError(true);
+    }
+  }
+
+  function resetForm() {
+    setForm(initState);
+  }
+
+  // clean up
+  useEffect(() => {
+    let timeout;
+    if (formError) {
+      timeout = setTimeout(() => {
+        setFormError(false);
+      }, 2000);
+    }
+    return () => clearTimeout(timeout);
+  }, [formError]);
+
+  useEffect(() => {
+    let timeout;
+    if (sent) {
+      resetForm();
+      timeout = setTimeout(() => {
+        dispatch(reset());
+      }, 3000);
+    }
+    return () => clearTimeout(timeout);
+  }, [dispatch, sent]);
 
   return (
     <section
@@ -51,7 +93,7 @@ const Contact = () => {
                   placeholder="Enter name"
                   value={form.name}
                   onChange={handleInputChange}
-                  name="user"
+                  name="name"
                 />
               </label>
             </div>
@@ -81,11 +123,24 @@ const Contact = () => {
                 ></textarea>
               </label>
             </div>
-            <button className="w-full py-3 px-1 outline-none border-none bg-[#F24B59] text-[#fff] rounded-md font-semibold mt-5">
-              Send Message
+            {formError ? (
+              <p className="text-red-500 font-bold">Invalid submission data</p>
+            ) : error ? (
+              <p className="text-red-500 font-bold">{error}</p>
+            ) : null}
+            {sent && (
+              <p className="font-bold text-green-500">
+                Message sent succesfully.
+              </p>
+            )}
+            <button
+              onClick={handleSubmit}
+              className="w-full py-3 px-1 outline-none border-none bg-[#F24B59] text-[#fff] rounded-md font-semibold mt-5"
+            >
+              {loading ? "Sending Message..." : " Send Message"}
             </button>
           </form>
-          <figure className="w-full flex items-center justify-center">
+          <figure className="w-full flex items-center justify-center mt-5 lg:mt-0">
             <img src={up} alt="" className="w-full rounded-full" />
           </figure>
         </div>
