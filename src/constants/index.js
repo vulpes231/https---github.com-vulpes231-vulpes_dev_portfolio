@@ -62,13 +62,17 @@ const projects = [
     title:
       "A Full stack banking web application that allows users to manage their assets.",
     tools: ["React.js", "Node.js", "MongoDB", "Redux"],
+    demo_url: "",
+    repo_url: "https://github.com/vulpes231/green-oak-client",
   },
   {
     id: 2,
     img: track,
     title:
-      "A Full stack package tracking web application which aim to demonstrate how package tracking works in web application.",
+      "A Full stack package management and tracking web application that allow users to manage and track their packages",
     tools: ["React.js", "Node.js", "MongoDB"],
+    demo_url: "",
+    repo_url: "https://github.com/vulpes231/cserve-ui",
   },
   {
     id: 3,
@@ -76,6 +80,8 @@ const projects = [
     title:
       "A Full stack health tracking application facilitating effortless patient-professional connectivity for streamlined healthcare monitoring.",
     tools: ["React.js", "Node.js", "MongoDB"],
+    demo_url: "",
+    repo_url: "https://github.com/orgs/health-sync23/repositories",
   },
   {
     id: 4,
@@ -83,6 +89,8 @@ const projects = [
     title:
       "An innovative article summarizer application that condenses complex content into concise, digestible summaries, offering users a quick and efficient way to grasp key information.",
     tools: ["React.js", "Tailwind", "AI"],
+    demo_url: "",
+    repo_url: "https://github.com/vulpes231/vgpt",
   },
 ];
 

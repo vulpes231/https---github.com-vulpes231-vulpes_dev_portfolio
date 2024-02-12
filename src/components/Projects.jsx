@@ -2,6 +2,7 @@ import React from "react";
 import { projects } from "../constants";
 import { motion } from "framer-motion";
 import { styles } from "../constants/styles";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const myProjects = projects.map((project) => {
@@ -48,9 +49,28 @@ const Projects = () => {
             );
           })}
         </div>
-        <div className="bg-[#333] p-2 rounded-md text-[#fff] text-xs">
-          <p>Demo url:</p>
-          <p>Repo url:</p>
+        <div className="bg-[#333] p-2 rounded-md text-[#fff]">
+          <p className="flex items-center gap-5 text-xs font-light ">
+            Demo url:
+            <Link
+              className="font-extralight underline "
+              target="_blank"
+              to={project.demo_url}
+            >
+              {project.demo_url.substring(0, 25) || "Link not available"}
+            </Link>
+          </p>
+          <p className="flex items-center gap-5 text-xs font-light ">
+            Repo url:{" "}
+            <Link
+              className="font-extralight underline "
+              target="_blank"
+              to={project.repo_url}
+            >
+              {project.repo_url.substring(0, 25) + "..." ||
+                "Link not available"}
+            </Link>
+          </p>
         </div>
       </motion.article>
     );

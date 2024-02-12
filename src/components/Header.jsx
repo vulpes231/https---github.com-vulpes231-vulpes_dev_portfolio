@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <header
-      className={`${styles.padding.large} ${styles.colors.lightBg} w-full  sticky top-0`}
+      className={`${styles.padding.large} ${styles.colors.lightBg} w-full  sticky top-0 z-50`}
     >
       <nav className={`flex justify-between items-center`}>
         {/* logo */}
