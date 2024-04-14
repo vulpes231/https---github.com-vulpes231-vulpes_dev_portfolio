@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { experiences } from "../constants";
 import { motion } from "framer-motion";
 import { styles } from "../constants/styles";
-import { css, html, js, mongo, node, react, rn, tail } from "../assets";
-import Stacks from "./Stacks";
 
 const Experience = () => {
   const [activeExperiences, setActiveExperiences] = useState({});
@@ -66,19 +64,6 @@ const Experience = () => {
           </h3>
         </div>
         <div className="flex flex-col gap-4">{workExperiences}</div>
-        <h3 className=" text-2xl md:text-3xl text-[#333] font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59]">
-          Skills
-        </h3>
-        <figure className="grid grid-cols-3 md:grid-cols-4 gap-6">
-          <Stacks title={"HTML"} pic={html} />
-          <Stacks title={"CSS"} pic={css} />
-          <Stacks title={"Javascript"} pic={js} />
-          <Stacks title={"React"} pic={react} />
-          <Stacks title={"React Native"} pic={rn} />
-          <Stacks title={"Node.js"} pic={node} />
-          <Stacks title={"MongoDB"} pic={mongo} />
-          <Stacks title={"Tailwind CSS"} pic={tail} />
-        </figure>
       </div>
     </section>
   );

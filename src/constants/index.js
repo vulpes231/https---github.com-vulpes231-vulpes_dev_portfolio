@@ -1,9 +1,9 @@
-import { bank, health, track, vp } from "../assets";
+import { bank, health, psych, track, vp } from "../assets";
 
 const navLinks = [
   {
-    id: "experience",
-    title: "Experience",
+    id: "home",
+    title: "Home",
   },
   {
     id: "projects",
@@ -58,39 +58,30 @@ const experiences = [
 const projects = [
   {
     id: 1,
-    img: bank,
-    title:
-      "A Full stack banking web application that allows users to manage their assets.",
-    tools: ["React.js", "Node.js", "MongoDB", "Redux"],
-    demo_url: "",
-    repo_url: "https://github.com/vulpes231/green-oak-client",
-  },
-  {
-    id: 2,
     img: track,
     title:
       "A Full stack package management and tracking web application that allow users to manage and track their packages",
-    tools: ["React.js", "Node.js", "MongoDB"],
-    demo_url: "",
+    tools: ["React.js", "Node.js", "MongoDB", "Redux"],
+    demo_url: "https://247shipslimited.com",
     repo_url: "https://github.com/vulpes231/cserve-ui",
   },
   {
-    id: 3,
-    img: health,
-    title:
-      "A Full stack health tracking application facilitating effortless patient-professional connectivity for streamlined healthcare monitoring.",
-    tools: ["React.js", "Node.js", "MongoDB"],
-    demo_url: "",
-    repo_url: "https://github.com/orgs/health-sync23/repositories",
-  },
-  {
-    id: 4,
+    id: 2,
     img: vp,
     title:
       "An innovative article summarizer application that condenses complex content into concise, digestible summaries, offering users a quick and efficient way to grasp key information.",
     tools: ["React.js", "Tailwind", "AI"],
     demo_url: "",
     repo_url: "https://github.com/vulpes231/vgpt",
+  },
+  {
+    id: 3,
+    img: psych,
+    title:
+      "An innovative article summarizer application that condenses complex content into concise, digestible summaries, offering users a quick and efficient way to grasp key information.",
+    tools: ["React.js", "Tailwind", "Node.js"],
+    demo_url: "https://psychedelicsng.online",
+    repo_url: "https://github.com/vulpes231/bishop",
   },
 ];
 

@@ -9,7 +9,7 @@ const Projects = () => {
     return (
       <motion.article
         key={project.id}
-        className="w-full flex flex-col justify-between gap-4 rounded-lg bg-[#fff] bg-opacity-80 p-4"
+        className="w-full flex flex-col justify-between gap-4 rounded-lg bg-[#fff] bg-opacity-80 p-4 cursor-pointer"
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{
@@ -21,7 +21,7 @@ const Projects = () => {
         <figure>
           <img src={project.img} alt="bank-project-image" className="w-full" />
         </figure>
-        <p className="text-[#333] leading-5 font-light text-center">
+        <p className="text-[#333] leading-7 font-light text-xs text-center px-4">
           {project.title}
         </p>
         <div className="flex gap-2 justify-center">
@@ -42,7 +42,7 @@ const Projects = () => {
             return (
               <span
                 key={index}
-                className={`${className} bg-[#fff] p-2  rounded-md font-extralight text-xs`}
+                className={`${className} bg-[#fff] p-2  rounded-md font-semibold text-xs`}
               >
                 {tool}
               </span>
@@ -51,7 +51,7 @@ const Projects = () => {
         </div>
         <div className="bg-[#333] p-2 rounded-md text-[#fff]">
           <p className="flex items-center gap-5 text-xs font-light ">
-            Demo url:
+            Live url:
             <Link
               className="font-extralight underline "
               target="_blank"

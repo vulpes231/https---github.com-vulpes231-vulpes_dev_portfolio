@@ -11,7 +11,7 @@ const Content = () => {
   return (
     <div className="">
       <Hero />
-      <Experience />
+      {/* <Experience /> */}
       <Projects />
       <About />
       <Contact />

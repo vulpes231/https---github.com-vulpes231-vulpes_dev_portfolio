@@ -15,6 +15,7 @@ import node from "./node.png";
 import react from "./react.png";
 import rn from "./rn.png";
 import tail from "./tail.png";
+import psych from "./psych.png";
 
 export {
   pbg,
@@ -34,4 +35,5 @@ export {
   react,
   rn,
   tail,
+  psych,
 };

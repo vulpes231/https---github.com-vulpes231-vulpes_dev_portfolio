@@ -68,19 +68,18 @@ const Contact = () => {
       id="contact"
       className={`${styles.colors.darkBg} ${styles.padding.large} min-h-screen `}
     >
-      <div className="lg:max-w-[1000px] lg:mx-auto">
+      <div className="lg:max-w-[1000px] lg:mx-auto text-[#fff]">
         <div className="gap-2">
           <h3 className="text-2xl md:text-3xl text-[#fff] font-semibold mt-20 mb-5 capitalize inline-block border-b-4 border-b-[#F24B59] ">
             Let's Connect
           </h3>
-          <p className="my-2 lg:w-[60%]">
-            I'm always open to new opportunities and collaborations. If you'd
-            like to discuss a potential project or just chat about technology,
-            feel free to reach out to me.
+          <p className="my-2 lg:w-[50%] font-extralight capitalize text-xs leading-6 ">
+            I'm open to new opportunities and collaborations. <br /> If you'd
+            like to discuss a potential project, feel free to reach out to me.
           </p>
         </div>
 
-        <div className="lg:flex lg:flex-row-reverse w-full gap-10">
+        <div className="lg:flex lg:flex-row-reverse w-full gap-10 mt-10">
           <form
             action=""
             className="flex flex-col gap-2 font-extralight w-full"
@@ -90,7 +89,7 @@ const Contact = () => {
                 <Input
                   id="name"
                   type="text"
-                  placeholder="Enter name"
+                  placeholder="Your Name"
                   value={form.name}
                   onChange={handleInputChange}
                   name="name"
@@ -102,7 +101,7 @@ const Contact = () => {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Enter email"
+                  placeholder="Your Email"
                   value={form.email}
                   onChange={handleInputChange}
                   name="email"
@@ -118,8 +117,8 @@ const Contact = () => {
                   rows="10"
                   value={form.message}
                   onChange={handleInputChange}
-                  placeholder="Enter your message"
-                  className="w-full py-2 px-1 outline-none border border-[#F24B59] text-black"
+                  placeholder="Your Message"
+                  className="w-full py-2 px-4 outline-none border-2 border-[#F24B59] text-[#fff] bg-transparent rounded-md"
                 ></textarea>
               </label>
             </div>
@@ -135,13 +134,13 @@ const Contact = () => {
             )}
             <button
               onClick={handleSubmit}
-              className="w-full py-3 px-1 outline-none border-none bg-[#F24B59] text-[#fff] rounded-md font-semibold mt-5"
+              className="w-full py-3 px-1 outline-none bg-[#F24B59] text-[#fff] rounded-md font-semibold mt-5 hover:bg-transparent hover:border-2 hover:border-[#F24B59]"
             >
               {loading ? "Sending Message..." : " Send Message"}
             </button>
           </form>
           <figure className="w-full flex items-center justify-center mt-5 lg:mt-0">
-            <img src={up} alt="" className="w-full rounded-full" />
+            <img src={up} alt="" className="w-full rounded-full opacity-70" />
           </figure>
         </div>
       </div>

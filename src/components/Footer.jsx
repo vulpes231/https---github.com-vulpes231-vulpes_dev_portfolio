@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="relative flex flex-col gap-2 items-center p-6 bg-[#0f0f0f] text-slate-200 font-extralight ">
       <h3 className="">Adebayo Olayinka </h3>
-      <p>2023 &copy; All Rights Reserved</p>
+      <p>2024 &copy; All Rights Reserved</p>
       <div className="flex flex-col items-center">
         <p>Social media</p>
         <div className="flex gap-2">

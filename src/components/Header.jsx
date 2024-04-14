@@ -20,7 +20,7 @@ const Header = () => {
     return (
       <li
         key={link.id}
-        className={`cursor-pointer hover:border-b-2 hover:border-b-[#F24B59] font-extralight`}
+        className={`cursor-pointer hover:text-[#F24B59] font-normal text-slate-700`}
       >
         <Link
           to={link.id}
@@ -28,7 +28,7 @@ const Header = () => {
           smooth={true}
           offset={10}
           duration={500}
-          className="text-xl cursor-pointer"
+          className="text-lg cursor-pointer"
           onClick={closeMenu}
         >
           {link.title}
