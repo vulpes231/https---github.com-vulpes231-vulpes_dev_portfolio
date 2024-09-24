@@ -29,7 +29,7 @@ const Header = () => {
     return (
       <li
         key={link.id}
-        className={`cursor-pointer hover:text-[#F24B59] font-medium text-xs uppercase font-[Ubuntu]`}
+        className={`cursor-pointer hover:text-green-300 font-medium text-xs uppercase font-[Ubuntu]`}
       >
         <Link
           to={link.id}
@@ -61,7 +61,7 @@ const Header = () => {
           <h1 className="text-xl md:text-2xl flex gap-0.5">
             A
             <span>
-              <DiRedhat className="text-3xl text-red-500" />
+              <DiRedhat className="text-3xl text-green-300" />
             </span>
           </h1>
         </Link>
@@ -69,10 +69,10 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <ul className={`hidden md:flex gap-3 text-sm `}>{links}</ul>
           <span className="flex gap-2">
-            <FaWhatsapp className="hover:text-green-500" />
-            <FaXTwitter className="hover:text-white" />
-            <FaLinkedin className="hover:text-blue-500" />
-            <MdOutlineAlternateEmail className="hover:text-yellow-500" />
+            <FaWhatsapp className="hover:text-green-500 cursor-pointer" />
+            <FaXTwitter className="hover:text-slate-300 cursor-pointer" />
+            <FaLinkedin className="hover:text-blue-500 cursor-pointer" />
+            <MdOutlineAlternateEmail className="hover:text-yellow-500 cursor-pointer" />
           </span>
         </div>
 

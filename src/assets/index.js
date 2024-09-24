@@ -16,9 +16,13 @@ import react from "./react.png";
 import rn from "./rn.png";
 import tail from "./tail.png";
 import psych from "./psych.png";
+import quadx from "./quadx.png";
+import rabbit from "./rabbit.png";
 
 export {
   pbg,
+  quadx,
+  rabbit,
   logo,
   bank,
   track,

@@ -3,32 +3,38 @@ import { projects } from "../constants";
 import { motion } from "framer-motion";
 import { styles } from "../constants/styles";
 import { Link } from "react-router-dom";
+import { FaFolderOpen } from "react-icons/fa6";
 
 const Projects = () => {
   const myProjects = projects.map((project) => {
     return (
       <motion.article
+        layout
         key={project.id}
-        className="w-full flex flex-col justify-between gap-4 rounded-lg bg-[#fff] bg-opacity-80 p-4 cursor-pointer"
-        initial={{ opacity: 0, scale: 0 }}
+        className="w-full flex flex-col justify-between gap-4 rounded-lg bg-black cursor-pointer border border-slate-600"
+        initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{
-          ease: "linear",
+          ease: "easeInOut",
           duration: 2,
           x: { duration: 0.5 },
         }}
       >
         <figure>
-          <img src={project.img} alt="bank-project-image" className="w-full" />
+          <img
+            src={project.img}
+            alt="bank-project-image"
+            className="w-full h-[150px]"
+          />
         </figure>
-        <p className="text-[#333] leading-7 font-light text-xs text-center px-4">
+        <p className="leading-5 font-light text-xs text-center px-4 font-[Ubuntu]">
           {project.title}
         </p>
-        <div className="flex gap-2 justify-center">
+        <div className="flex gap-2 justify-center flex-wrap">
           {project.tools.map((tool, index) => {
-            const className = tool.includes("React.js")
+            const className = tool.includes("ReactJs")
               ? "text-cyan-500"
-              : tool.includes("Node.js")
+              : tool.includes("NodeJs")
               ? "text-lime-500"
               : tool.includes("MongoDB")
               ? "text-green-500"
@@ -42,50 +48,39 @@ const Projects = () => {
             return (
               <span
                 key={index}
-                className={`${className} bg-[#fff] p-2  rounded-md font-semibold text-xs`}
+                className={`${className} bg-slate-950 border border-slate-800 p-2  rounded-md font-semibold text-xs`}
               >
                 {tool}
               </span>
             );
           })}
         </div>
-        <div className="bg-[#333] p-2 rounded-md text-[#fff]">
-          <p className="flex items-center gap-5 text-xs font-light ">
-            Live url:
-            <Link
-              className="font-extralight underline "
-              target="_blank"
-              to={project.demo_url}
-            >
-              {project.demo_url.substring(0, 25) || "Link not available"}
-            </Link>
-          </p>
-          <p className="flex items-center gap-5 text-xs font-light ">
-            Repo url:{" "}
-            <Link
-              className="font-extralight underline "
-              target="_blank"
-              to={project.repo_url}
-            >
-              {project.repo_url.substring(0, 25) + "..." ||
-                "Link not available"}
-            </Link>
-          </p>
+        <div className="bg-white border-t border-slate-600 p-2 text-green-500 flex items-center gap-1">
+          <FaFolderOpen />
+          <Link
+            className="font-medium uppercase text-xs underline "
+            target="_blank"
+            to={project.repo_url}
+          >
+            view repository
+          </Link>
         </div>
       </motion.article>
     );
   });
   return (
-    <section
-      id="projects"
-      className={`${styles.colors.darkBg} ${styles.padding.large} min-h-screen ${styles.fontFamily.primary} `}
-    >
-      <h3 className="text-2xl md:text-3xl text-[#fff] font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59] lg:ml-28">
-        Projects
-      </h3>
-      <div className="lg:max-w-[1000px] mx-auto">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 w-full">
-          {myProjects}
+    <section id="projects" className={`bg-slate-950 w-full p-6`}>
+      <div className="md:w-[1000px] md:mx-auto flex flex-col gap-6 ">
+        <div className="flex md:justify-center">
+          <h3 className="text-lg md:text-xl text-[#fff] font-semibold inline-block border-b-4 border-b-green-600 uppercase my-10">
+            recent projects
+          </h3>
+        </div>
+
+        <div className="lg:max-w-[1000px] mx-auto">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 w-full">
+            {myProjects}
+          </div>
         </div>
       </div>
     </section>

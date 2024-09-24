@@ -21,11 +21,13 @@ const About = () => {
       id="about"
       className={`${styles.colors.darkBg} ${styles.padding.large} min-h-screen bg-opacity-10 ${styles.fontFamily.primary}`}
     >
-      <div className="lg:max-w-[1000px] mx-auto">
-        <h3 className="text-2xl md:text-3xl font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59]">
-          About Me
-        </h3>
-        <div className="flex flex-col lg:flex-row md:gap-6">
+      <div className="md:max-w-[1000px] md:mx-auto">
+        <div className="flex md:justify-center">
+          <h3 className="text-lg md:text-xl text-[#fff] font-semibold inline-block border-b-4 border-b-green-600 uppercase my-10">
+            About Me
+          </h3>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:justify-between md:gap-6">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -34,11 +36,11 @@ const About = () => {
               duration: 2,
               x: { duration: 0.5 },
             }}
-            className="flex flex-col gap-4 w-full"
+            className="flex flex-col gap-8 w-full"
           >
             {myAbout}
           </motion.div>
-          <motion.figure
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{
@@ -46,17 +48,9 @@ const About = () => {
               duration: 2,
               x: { duration: 1 },
             }}
-            className="hidden md:flex md:w-full md:items-center md:justify-center md:p-2 "
+            className="hidden md:grid grid-cols-3 w-full p-6"
             style={{ opacity: 0.5 }}
           >
-            <img src={about} alt="" className="w-full" />
-          </motion.figure>
-        </div>
-        <div>
-          <h3 className=" text-2xl md:text-3xl text-[#333] font-semibold mt-20 mb-10 capitalize inline-block border-b-4 border-b-[#F24B59]">
-            Skills
-          </h3>
-          <figure className=" p-6 flex flex-wrap gap-6">
             <Stacks title={"HTML"} pic={html} />
             <Stacks title={"CSS"} pic={css} />
             <Stacks title={"Javascript"} pic={js} />
@@ -65,7 +59,7 @@ const About = () => {
             <Stacks title={"Node.js"} pic={node} />
             <Stacks title={"MongoDB"} pic={mongo} />
             <Stacks title={"Tailwind CSS"} pic={tail} />
-          </figure>
+          </motion.div>
         </div>
       </div>
     </section>

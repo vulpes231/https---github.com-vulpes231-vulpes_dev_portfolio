@@ -1,4 +1,4 @@
-import { bank, health, psych, track, vp } from "../assets";
+import { bank, health, psych, quadx, rabbit, track, vp } from "../assets";
 
 const navLinks = [
   {
@@ -69,11 +69,28 @@ const projects = [
   {
     id: 3,
     img: psych,
-    title:
-      "An innovative article summarizer application that condenses complex content into concise, digestible summaries, offering users a quick and efficient way to grasp key information.",
-    tools: ["React.js", "Tailwind", "Node.js"],
+    title: "An online store.",
+    tools: ["ReactJs", "Tailwind", "NodeJs"],
     demo_url: "https://psychedelicsng.online",
     repo_url: "https://github.com/vulpes231/bishop",
+  },
+  {
+    id: 4,
+    img: quadx,
+    title:
+      "Quadx is an intuitive full-stack trading app designed to empower users with seamless access to the financial markets. With real-time data and a user-friendly interface ",
+    tools: ["ReactJs", "Redux", "NodeJs", "API", "MongoDB"],
+    demo_url: "",
+    repo_url: "https://github.com/vulpes231/itrust-ui",
+  },
+  {
+    id: 4,
+    img: rabbit,
+    title:
+      "Rabbit is a dynamic full-stack online e-commerce application that provides users with a diverse range of products. With a seamless shopping experience and the ability to process payments in cryptocurrency",
+    tools: ["ReactJs", "Redux", "NodeJs", "API", "MongoDB"],
+    demo_url: "",
+    repo_url: "https://github.com/vulpes231/rabbit-client",
   },
 ];
 
