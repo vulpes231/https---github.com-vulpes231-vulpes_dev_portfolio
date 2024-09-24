@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-scroll";
+import { Link as MyLink } from "react-router-dom";
 import { DiRedhat } from "react-icons/di";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import Contact from "./Contact";
@@ -76,34 +77,34 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <ul className={`hidden md:flex gap-3 text-sm `}>{links}</ul>
           <span className="flex gap-2">
-            <Link
+            <MyLink
               to="https://wa.me/2347043978929"
               target="_blank"
               className="hover:text-green-500 cursor-pointer"
             >
               <FaWhatsapp />
-            </Link>
-            <Link
+            </MyLink>
+            <MyLink
               to="https://twitter.com/4ULP35"
               target="_blank"
               className="hover:text-cyan-500 cursor-pointer"
             >
               <FaXTwitter />
-            </Link>
-            <Link
+            </MyLink>
+            <MyLink
               to="https://www.linkedin.com/in/olayinka26/"
               target="_blank"
               className="hover:text-blue-500 cursor-pointer"
             >
               <FaLinkedin />
-            </Link>
-            <Link
+            </MyLink>
+            <MyLink
               to="https://github.com/vulpes231"
               target="_blank"
               className="hover:text-white cursor-pointer"
             >
               <FaGithub />
-            </Link>
+            </MyLink>
             <button
               onClick={handleModal}
               className="hover:text-yellow-500 cursor-pointer"
