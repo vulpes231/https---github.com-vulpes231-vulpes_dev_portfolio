@@ -23,7 +23,7 @@ export const styles = {
   fontWeight: {
     small: "font-extralight",
     mid: "font-light",
-    small: "font-bold",
+    // small: "font-bold",
   },
   fontSize: {
     small: "text-sm",

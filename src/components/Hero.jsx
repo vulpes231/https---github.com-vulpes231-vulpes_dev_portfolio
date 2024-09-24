@@ -9,22 +9,23 @@ const Hero = () => {
       id="hero"
       className={`w-full ${styles.padding.large} hero min-h-screen flex items-center justify-center`}
     >
+      <div className="w-full h-full bg-black absolute bg-opacity-40"></div>
       <div
-        className={`lg:max-w-[900px] lg:mx-auto flex flex-col ${styles.gap.large} px-8 w-full`}
+        className={`flex flex-col ${styles.gap.large} w-full lg:max-w-[900px] lg:mx-auto z-10`}
       >
         <h3
-          className={`text-2xl md:text-5xl leading-7 text-center ${styles.fontFamily.primary} whitespace-nowrap font-bold text-[#fff]`}
+          className={`text-2xl md:text-5xl leading-7 ${styles.fontFamily.primary} whitespace-nowrap font-bold text-[#fff]`}
         >
-          I'm Adebayo <span className="text-[#F24B59]">Olayinka.</span>
+          Adebayo <span className="text-[#F24B59]">Olayinka.</span>
         </h3>
         <p
-          className={`${styles.colors.lightText} text-center  capitalize w-full md:w-[95%] md:mx-auto ${styles.fontFamily.primary} font-extralight md:text-xl `}
+          className={`${styles.colors.lightText} capitalize w-full md:w-[95%] md:mx-auto ${styles.fontFamily.primary} `}
         >
-          I'm a passionate fullstack software developer with a deep love for
-          creating innovative and efficient solutions. With 2 years of
-          experience in the industry, I've had the opportunity to work on a
-          variety of projects that have honed my skills and allowed me to grow
-          as a developer.
+          A passionate full-stack software developer with over 3 years of
+          experience in crafting modern, user-friendly interfaces and robust
+          backend solutions. I’ve successfully collaborated with diverse clients
+          and businesses to deliver innovative and efficient software that meets
+          their unique needs.
         </p>
         <Link
           to="projects"
@@ -32,10 +33,10 @@ const Hero = () => {
           smooth={true}
           offset={10}
           duration={500}
-          className={`${styles.padding.mid} ${styles.colors.bgColor} flex items-center ${styles.gap.small} ${styles.colors.lightText} rounded-lg mt-5 justify-center font-bold ${styles.fontFamily.primary} text-lg md:text-xl capitalize md:w-[450px] md:mx-auto hover:border hover:border-[#F24B59] hover:bg-transparent cursor-pointer`}
+          className={`${styles.colors.bgColor} flex items-center ${styles.gap.small} ${styles.colors.lightText} rounded-3xl mt-5 justify-center font-bold ${styles.fontFamily.primary} text-sm md:text-lg capitalize md:w-[450px] md:mx-auto hover:border hover:border-[#F24B59] hover:bg-transparent cursor-pointer px-5 py-2.5 shadow-sm shadow-slate-500 sha`}
         >
-          View my projects
           <BsArrowLeftRight className="font-semibold" size={18} />
+          recent projects
         </Link>
       </div>
     </section>

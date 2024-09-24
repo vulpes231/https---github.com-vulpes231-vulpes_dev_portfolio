@@ -2,20 +2,12 @@ import { bank, health, psych, track, vp } from "../assets";
 
 const navLinks = [
   {
-    id: "home",
-    title: "Home",
-  },
-  {
-    id: "projects",
-    title: "Projects",
-  },
-  {
     id: "about",
     title: "About",
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: "resume",
+    title: "Resume",
   },
 ];
 
