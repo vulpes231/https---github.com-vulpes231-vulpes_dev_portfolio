@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Input from "./Input";
 import { up } from "../assets";
-
-import { styles } from "../constants/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { sendMessage, reset } from "../features/sendMessageSlice";
+import { MdClose } from "react-icons/md";
 
 const initState = {
   name: "",
@@ -12,7 +11,7 @@ const initState = {
   message: "",
 };
 
-const Contact = () => {
+const Contact = ({ close }) => {
   const dispatch = useDispatch();
   const [form, setForm] = useState(initState);
   const [formError, setFormError] = useState(false);
@@ -29,7 +28,6 @@ const Contact = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     if (form.email && form.name && form.message) {
       dispatch(sendMessage(form));
     } else {
@@ -41,7 +39,7 @@ const Contact = () => {
     setForm(initState);
   }
 
-  // clean up
+  // Clean up
   useEffect(() => {
     let timeout;
     if (formError) {
@@ -64,87 +62,68 @@ const Contact = () => {
   }, [dispatch, sent]);
 
   return (
-    <section
-      id="contact"
-      className={`${styles.colors.darkBg} ${styles.padding.large} min-h-screen `}
+    <div
+      className={`w-full h-screen fixed top-0 left-0 flex items-center justify-center bg-black bg-opacity-50 p-3`}
+      onClick={close}
     >
-      <div className="lg:max-w-[1000px] lg:mx-auto text-[#fff]">
-        <div className="gap-2">
-          <h3 className="text-2xl md:text-3xl text-[#fff] font-semibold mt-20 mb-5 capitalize inline-block border-b-4 border-b-[#F24B59] ">
-            Let's Connect
+      <div
+        className="bg-white rounded-lg shadow-lg p-6 relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex justify-between items-center">
+          <h3 className="text-2xl md:text-3xl text-black font-semibold mb-5 capitalize">
+            Leave a message.
           </h3>
-          <p className="my-2 lg:w-[50%] font-extralight capitalize text-xs leading-6 ">
-            I'm open to new opportunities and collaborations. <br /> If you'd
-            like to discuss a potential project, feel free to reach out to me.
-          </p>
+          <MdClose
+            className="text-xl cursor-pointer text-black"
+            onClick={close}
+          />
         </div>
 
-        <div className="lg:flex lg:flex-row-reverse w-full gap-10 mt-10">
-          <form
-            action=""
-            className="flex flex-col gap-2 font-extralight w-full"
+        <form className="flex flex-col gap-4 font-extralight w-full">
+          <Input
+            type="text"
+            placeholder="Your Name"
+            value={form.name}
+            onChange={handleInputChange}
+            name="name"
+          />
+          <Input
+            type="email"
+            placeholder="Your Email"
+            value={form.email}
+            onChange={handleInputChange}
+            name="email"
+          />
+          <textarea
+            id="message"
+            name="message"
+            cols="30"
+            rows="5"
+            value={form.message}
+            onChange={handleInputChange}
+            placeholder="Your Message"
+            className="w-full py-2 px-4 outline-none border-2 focus:outline-green-500 focus:border-none rounded-md text-black"
+          ></textarea>
+          {formError ? (
+            <p className="text-red-500 font-bold">Invalid submission data</p>
+          ) : error ? (
+            <p className="text-red-500 font-bold">{error}</p>
+          ) : null}
+          {sent && (
+            <p className="font-bold text-green-500">
+              Message sent successfully.
+            </p>
+          )}
+          <button
+            onClick={handleSubmit}
+            className="w-full py-3 bg-green-800 text-[#fff] rounded-md font-semibold hover:bg-transparent hover:border-2 hover:border-green-500 transition"
           >
-            <div className="flex flex-col">
-              <label>
-                <Input
-                  id="name"
-                  type="text"
-                  placeholder="Your Name"
-                  value={form.name}
-                  onChange={handleInputChange}
-                  name="name"
-                />
-              </label>
-            </div>
-            <div className="flex flex-col">
-              <label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Your Email"
-                  value={form.email}
-                  onChange={handleInputChange}
-                  name="email"
-                />
-              </label>
-            </div>
-            <div className="flex flex-col">
-              <label>
-                <textarea
-                  id="message"
-                  name="message"
-                  cols="30"
-                  rows="10"
-                  value={form.message}
-                  onChange={handleInputChange}
-                  placeholder="Your Message"
-                  className="w-full py-2 px-4 outline-none border-2 border-[#F24B59] text-[#fff] bg-transparent rounded-md"
-                ></textarea>
-              </label>
-            </div>
-            {formError ? (
-              <p className="text-red-500 font-bold">Invalid submission data</p>
-            ) : error ? (
-              <p className="text-red-500 font-bold">{error}</p>
-            ) : null}
-            {sent && (
-              <p className="font-bold text-green-500">
-                Message sent succesfully.
-              </p>
-            )}
-            <button
-              onClick={handleSubmit}
-              className="w-full py-3 px-1 outline-none bg-[#F24B59] text-[#fff] rounded-md font-semibold mt-5 hover:bg-transparent hover:border-2 hover:border-[#F24B59]"
-            >
-              {loading ? "Sending Message..." : " Send Message"}
-            </button>
-          </form>
-          <figure className="w-full flex items-center justify-center mt-5 lg:mt-0">
-            <img src={up} alt="" className="w-full rounded-full opacity-70" />
-          </figure>
-        </div>
+            {loading ? "Sending Message..." : "Send Message"}
+          </button>
+        </form>
       </div>
-    </section>
+    </div>
   );
 };
 

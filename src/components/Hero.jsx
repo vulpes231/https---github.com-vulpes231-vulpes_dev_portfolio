@@ -11,7 +11,7 @@ const Hero = () => {
     >
       <div className="w-full h-full bg-black absolute bg-opacity-40"></div>
       <div
-        className={`flex flex-col ${styles.gap.large} w-full md:max-w-[900px] md:mx-auto z-10`}
+        className={`flex flex-col ${styles.gap.large} w-full md:max-w-[900px] md:mx-auto z-[1]`}
       >
         <h3
           className={`text-2xl md:text-5xl leading-7 ${styles.fontFamily.primary} whitespace-nowrap font-bold text-[#fff] md:text-center`}

@@ -84,7 +84,7 @@ const projects = [
     repo_url: "https://github.com/vulpes231/itrust-ui",
   },
   {
-    id: 4,
+    id: 5,
     img: rabbit,
     title:
       "Rabbit is a dynamic full-stack online e-commerce application that provides users with a diverse range of products. With a seamless shopping experience and the ability to process payments in cryptocurrency",
