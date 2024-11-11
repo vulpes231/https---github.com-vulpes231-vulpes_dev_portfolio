@@ -33,22 +33,30 @@ const Header = () => {
     setToggle(false);
   }
 
-  const links = navLinks.map((link) => {
+  const links = navLinks.map((link, index) => {
     return (
       <li
         key={link.id}
         className={`cursor-pointer hover:text-green-300 font-medium text-xs uppercase font-[Ubuntu]`}
       >
-        <Link
-          to={link.id}
-          spy={true}
-          smooth={true}
-          offset={10}
-          duration={500}
-          onClick={closeMenu}
-        >
-          {link.title}
-        </Link>
+        {index === 0 && (
+          <Link
+            to={link.id}
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={500}
+            onClick={closeMenu}
+          >
+            {link.title}
+          </Link>
+        )}
+
+        {index === 1 && (
+          <MyLink to={link.path} target="_blank" onClick={closeMenu}>
+            {link.title}
+          </MyLink>
+        )}
       </li>
     );
   });
@@ -85,7 +93,7 @@ const Header = () => {
               <FaWhatsapp />
             </MyLink>
             <MyLink
-              to="https://twitter.com/4ULP35"
+              to="https://twitter.com/vulpes26"
               target="_blank"
               className="hover:text-cyan-500 cursor-pointer"
             >
